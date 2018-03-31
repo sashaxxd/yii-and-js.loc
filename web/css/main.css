@@ -1,0 +1,17 @@
+.category{
+    display: none;
+}
+.wb_CssMenu2 ul li a.active {
+    background-color: #2A93E4;
+    background-image: none;
+    border: 0px #2E6DA4 solid;
+    color: #FFFFFF;
+}
+
+
+#wb_CssMenu1 ul li a.active {
+    background-color: #2A93E4;
+    background-image: none;
+    border: 0px #2E6DA4 solid;
+    color: #FFFFFF;
+}
