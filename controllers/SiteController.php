@@ -70,18 +70,18 @@ class SiteController extends Controller
 //            Debug(Yii::$app->request->post());
             $id = Yii::$app->request->post('id');
 //            Debug($id);
-            $table = TableParam::find()->all();
+//            $table = TableParam::find()->where(['category_id' => 1]);
             $category = Category::find()->where(['lesson_id' => $id])->all();
             return $this->render('ajax',[
                 'products' => $products,
                 'category' => $category,
-                'table' => $table
+
 
             ]);
 
 
         }
-        $table = TableParam::find()->all();
+
         $category = Category::find()->one();
         return $this->render('index',[
             'products' => $products,
