@@ -86,9 +86,32 @@ class SiteController extends Controller
         return $this->render('index',[
             'products' => $products,
             'category' => $category,
-            'table' => $table
+
 
         ]);
+    }
+
+
+    public function actionTable()
+    {
+        $products = Products::find()->all();
+        if (Yii::$app->request->isAjax) {
+            $this->layout = false;
+//            Debug(Yii::$app->request->post());
+            $id = Yii::$app->request->post('id');
+//            Debug($id);
+//            $table = TableParam::find()->where(['category_id' => 1]);
+            $category = Category::find()->one();
+            $table = TableParam::find()->where(['category_id' => $id])->all();
+            return $this->render('ajax2',[
+                'products' => $products,
+                'category' => $category,
+            'table' => $table
+
+
+            ]);
+        }
+            return false;
     }
 
     /**

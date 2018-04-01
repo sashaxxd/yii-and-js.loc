@@ -45,4 +45,9 @@ class Category extends \yii\db\ActiveRecord
     public function getTable(){
         return $this->hasMany(TableParam::className(), ['category_id' => 'id']);
     }
+
+
+    public function getLesson(){
+        return $this->hasOne(Lessons::className(), ['id' => 'lesson_id']);
+    }
 }
