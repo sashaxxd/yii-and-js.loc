@@ -49,6 +49,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'device/<id:\d+>' =>'site/index',
             ],
         ],
 

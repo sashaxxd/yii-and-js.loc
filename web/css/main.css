@@ -1,5 +1,5 @@
 .category{
-    display: none;
+    /*display: none;*/
 }
 .wb_CssMenu2 ul li a.active {
     background-color: #2A93E4;

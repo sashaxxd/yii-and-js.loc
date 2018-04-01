@@ -13,7 +13,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
-class SiteController extends Controller
+class SiteController extends AppController
 {
     /**
      * {@inheritdoc}
@@ -62,16 +62,19 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
+    public function actionIndex($id = null)
     {
+
+
         $products = Products::find()->all();
         if (Yii::$app->request->isAjax) {
             $this->layout = false;
 //            Debug(Yii::$app->request->post());
-            $id = Yii::$app->request->post('id');
+            $id = Yii::$app->request->get('id');
 //            Debug($id);
 //            $table = TableParam::find()->where(['category_id' => 1]);
             $category = Category::find()->where(['lesson_id' => $id])->all();
+
             return $this->render('ajax',[
                 'products' => $products,
                 'category' => $category,
@@ -82,7 +85,21 @@ class SiteController extends Controller
 
         }
 
-        $category = Category::find()->one();
+        if (Yii::$app->request->isGet) {
+            $category = Category::find()->where(['lesson_id' => $id])->all();
+            $this->setMeta($category[0]->lesson->name);
+            return $this->render('index',[
+                'products' => $products,
+                'category' => $category,
+
+
+            ]);
+
+
+        }
+
+        $category = Category::find()->where(['lesson_id' => $id])->all();
+
         return $this->render('index',[
             'products' => $products,
             'category' => $category,
@@ -95,10 +112,10 @@ class SiteController extends Controller
     public function actionTable()
     {
         $products = Products::find()->all();
-        if (Yii::$app->request->isAjax) {
+        if (Yii::$app->request->isAjax || Yii::$app->request->isGet) {
             $this->layout = false;
 //            Debug(Yii::$app->request->post());
-            $id = Yii::$app->request->post('id');
+            $id = Yii::$app->request->get('id');
 //            Debug($id);
 //            $table = TableParam::find()->where(['category_id' => 1]);
             $category = Category::find()->one();

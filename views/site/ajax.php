@@ -37,14 +37,14 @@ $this->title = 'Тест';
         </div>
     </div>
 </div>
-<div class="app-table">
+<div id="cat-rem">
 <div id="wb_table_search">
     <div id="table_search">
         <div class="row">
             <div class="col-1">
                 <table id="Table1">
                     <tr>
-                        <td colspan="3" class="cell0"><span id="wb_uid7">&nbsp; </span><span id="wb_uid8"> <?= $category[0]->lesson->name ?> / <?= $category[0]->name ?>  </span></td>
+                        <td colspan="3" class="cell0"><span id="wb_uid7">&nbsp; </span><span id="wb_uid8"> <?= $category[0]->lesson->name ?> / <?= $category[0]->lesson->name ?> <?= $item->id?> </span></td>
                     </tr>
                     <?php if(isset($category[0])) : ?>
                     <?php  foreach ($category[0]->table as $item) :?>

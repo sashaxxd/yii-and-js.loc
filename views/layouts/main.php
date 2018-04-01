@@ -49,17 +49,17 @@ AppAsset::register($this);
         <div class="row">
             <div class="col-1">
                 <div id="wb_Image1">
-                    <img src="images/yii.png" id="Image1" alt="">
+                    <img src="/images/yii.png" id="Image1" alt="">
                 </div>
             </div>
             <div class="col-2">
                 <div id="wb_Image2">
-                    <img src="images/1280px-React-icon.svg.png" id="Image2" alt="">
+                    <img src="/images/1280px-React-icon.svg.png" id="Image2" alt="">
                 </div>
             </div>
             <div class="col-3">
                 <div id="wb_Image3">
-                    <img src="images/apps-sdk_03_rest_api_275.png" id="Image3" alt="">
+                    <img src="/images/apps-sdk_03_rest_api_275.png" id="Image3" alt="">
                 </div>
             </div>
         </div>

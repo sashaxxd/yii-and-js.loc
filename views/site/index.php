@@ -1,16 +1,16 @@
 <?php
-
-/* @var $this yii\web\View */
-
-$this->title = 'Тест';
-?>
+//
+///* @var $this yii\web\View */
+//
+//$this->title = 'Ремонт техники';
+//?>
 
 <div id="wb_zag_par1">
     <div id="zag_par1">
         <div class="row">
             <div class="col-1">
                 <div id="wb_Text5">
-                    <span id="wb_uid1">ВЫБРАТЬ УРОК</span>
+                    <span id="wb_uid1">ВЫБРАТЬ ДЕВАЙС</span>
                 </div>
             </div>
         </div>
@@ -38,38 +38,43 @@ $this->title = 'Тест';
     </div>
 </div>
 <div class="app-category">
-<div class="category">
-<div id="wb_zag_par2">
-    <div id="zag_par2">
-        <div class="row">
-            <div class="col-1">
-                <div id="wb_Text1">
-                    <span id="wb_uid5">ВЫБРАТЬ РАЗДЕЛ</span>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-<div id="wb_par2">
-    <div id="par2">
-        <div class="row">
-            <div class="col-1">
-                <div id="wb_Text12">
-                    <span id="wb_uid6">YII2</span>
-                </div>
-                <div id="wb_CssMenu1">
-                    <ul>
-                        <?php  foreach ($category as $item) :?>
-                        <li class="firstmain"><a href="#" target="_self"><?= $item->name ?></a>
-                        </li>
-                        <?php  endforeach; ?>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+<!--<div class="app-category">-->
+<!--<div class="category">-->
+<!--<div id="wb_zag_par2">-->
+<!--    <div id="zag_par2">-->
+<!--        <div class="row">-->
+<!--            <div class="col-1">-->
+<!--                <div id="wb_Text1">-->
+<!--                    <span id="wb_uid5">ВЫБРАТЬ РАЗДЕЛ</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div id="wb_par2">-->
+<!--    <div id="par2">-->
+<!--        <div class="row">-->
+<!--            <div class="col-1">-->
+<!--                <div id="wb_Text12">-->
+<!--                    <span id="wb_uid6">--><?//= $category[0]->lesson->name ?><!--</span>-->
+<!--                </div>-->
+<!--                <div id="wb_CssMenu1">-->
+<!--                    <ul>-->
+<!--                        --><?php // foreach ($category as $item) :?>
+<!--                        <li class="firstmain"><a href="#" target="_self" data-id="--><?//= $item->id ?><!--">--><?//= $item->name ?><!--</a>-->
+<!--                        </li>-->
+<!--                        --><?php // endforeach; ?>
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<div class="app-table">
 </div>
 
 <div id="wb_LayoutGrid2">
