@@ -26,14 +26,14 @@ AppAsset::register($this);
     <body>
 <?php $this->beginBody() ?>
 
-<div id="wb_header">
+<div id="site_header">
     <div id="header">
         <div class="row">
             <div class="col-1">
-                <div id="wb_Text8">
-                    <span id="wb_uid0">YII2 + React js + rest</span>
+                <div id="site_Text8">
+                    <span id="site_uid0">YII2 + React js + rest</span>
                 </div>
-                <div id="wb_ResponsiveMenu">
+                <div id="site_ResponsiveMenu">
                     <label class="toggle" for="ResponsiveMenu-submenu" id="ResponsiveMenu-title">Меню<span id="ResponsiveMenu-icon"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></span></label>
                     <input type="checkbox" id="ResponsiveMenu-submenu">
                     <ul class="ResponsiveMenu" id="ResponsiveMenu">
@@ -44,21 +44,21 @@ AppAsset::register($this);
         </div>
     </div>
 </div>
-<div id="wb_logo_div">
+<div id="site_logo_div">
     <div id="logo_div">
         <div class="row">
             <div class="col-1">
-                <div id="wb_Image1">
+                <div id="site_Image1">
                     <img src="/images/yii.png" id="Image1" alt="">
                 </div>
             </div>
             <div class="col-2">
-                <div id="wb_Image2">
+                <div id="site_Image2">
                     <img src="/images/1280px-React-icon.svg.png" id="Image2" alt="">
                 </div>
             </div>
             <div class="col-3">
-                <div id="wb_Image3">
+                <div id="site_Image3">
                     <img src="/images/apps-sdk_03_rest_api_275.png" id="Image3" alt="">
                 </div>
             </div>
@@ -68,12 +68,12 @@ AppAsset::register($this);
 <div class="app-container">
 <?= $content ?>
 </div>
-<div id="wb_footer">
+<div id="site_footer">
     <div id="footer">
         <div class="row">
             <div class="col-1">
-                <div id="wb_Text3">
-                    <span id="wb_uid40">Model Generator<br>This generator generates an ActiveRecord class for the specified database table.</span>
+                <div id="site_Text3">
+                    <span id="site_uid40">Model Generator<br>This generator generates an ActiveRecord class for the specified database table.</span>
                 </div>
             </div>
         </div>

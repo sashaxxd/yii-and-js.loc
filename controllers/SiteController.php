@@ -7,11 +7,8 @@ use app\models\Products;
 use app\models\TableParam;
 use Yii;
 use yii\filters\AccessControl;
-use yii\web\Controller;
-use yii\web\Response;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
+
 
 class SiteController extends AppController
 {
@@ -57,22 +54,15 @@ class SiteController extends AppController
         ];
     }
 
-    /**
-     * Displays homepage.
-     *
-     * @return string
-     */
+
     public function actionIndex($id = null)
     {
-
-
         $products = Products::find()->all();
+
+
         if (Yii::$app->request->isAjax) {
             $this->layout = false;
-//            Debug(Yii::$app->request->post());
             $id = Yii::$app->request->get('id');
-//            Debug($id);
-//            $table = TableParam::find()->where(['category_id' => 1]);
             $category = Category::find()->where(['lesson_id' => $id])->all();
 
             return $this->render('ajax',[
@@ -85,7 +75,8 @@ class SiteController extends AppController
 
         }
 
-        if (Yii::$app->request->isGet) {
+        if (Yii::$app->request->get('id'))
+        {
             $category = Category::find()->where(['lesson_id' => $id])->all();
             $this->setMeta($category[0]->lesson->name);
             return $this->render('index',[
@@ -98,7 +89,7 @@ class SiteController extends AppController
 
         }
 
-        $category = Category::find()->where(['lesson_id' => $id])->all();
+        $category = Category::find()->where(['lesson_id' => 1])->all();
 
         return $this->render('index',[
             'products' => $products,
@@ -114,10 +105,7 @@ class SiteController extends AppController
         $products = Products::find()->all();
         if (Yii::$app->request->isAjax || Yii::$app->request->isGet) {
             $this->layout = false;
-//            Debug(Yii::$app->request->post());
             $id = Yii::$app->request->get('id');
-//            Debug($id);
-//            $table = TableParam::find()->where(['category_id' => 1]);
             $category = Category::find()->one();
             $table = TableParam::find()->where(['category_id' => $id])->all();
             return $this->render('ajax2',[
@@ -131,10 +119,5 @@ class SiteController extends AppController
             return false;
     }
 
-    /**
-     * Login action.
-     *
-     * @return Response|string
-     */
 
 }
